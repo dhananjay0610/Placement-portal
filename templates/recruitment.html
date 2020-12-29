@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% block title %}
+recruitment news
+{% endblock title %}
+
+{% block orgactive %}active
+{% endblock orgactive %}
+
+{% block css %}
+
+body{
+background:#000;
+padding:0;
+margin:0;
+}
+
+{% endblock css %}
+
+{% block body %}
+
+
+<section style=" width: 100%; height: 100%;
+   background-color: #26272b;
+    padding-top: 85px;">
+  <br> <br>
+
+
+</section>
+
+<div class="container my-2">
+  <br>
+  <br>
+
+  <h2>These are the active rectruiters coming soon in the college </h2>
+  {% for post in organisation reversed %}
+  <div class="col my-3">
+    <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+      <div class="col p-4 d-flex flex-column position-static">
+        <h3 class="mb-0">{{post.orgName}}</h3>
+        <div class="mb-1 text-muted">{{post.date}}</div>
+        <div class="preview">
+          <p class="card-text mb-auto">{{post.content|safe|truncatewords:70}}</p>
+        </div>
+        <a href="/{{post.slug}}" class="stretched-link">Continue reading</a>
+
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+
+{% endblock body %}

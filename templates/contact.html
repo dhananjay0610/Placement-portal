@@ -1,0 +1,156 @@
+{% extends 'base.html' %}
+{% block title %}
+contact
+{% endblock title %}
+{% block css %}
+
+
+
+
+.footer {
+position:fixed;
+left: 0;
+bottom: 0;
+width: 100%;
+{% comment %} heigth:0; {% endcomment %}
+background: grey;
+color: black;
+text-align:right;
+padding: 10px 10px 0px 10px;
+}
+
+
+{% endblock css %}
+{% block contactactive %} active {% endblock contactactive %}
+{% block body %}
+<!-- <section style=" width: 100%; height: 100%;
+   background-color: #444442;
+    padding-top: 85px;">
+  <br>
+  <br>
+  <br>
+  <br>
+  <br> -->
+
+  <section style=" width: 100%; height: 100%;
+   background-color: #26272b;
+    padding-top: 85px;">
+  <br> <br>
+
+
+</section>
+
+
+
+  <!-- another contact us form -->
+
+
+  <!-- <div class="container">
+    <div class="row">
+      <h1 style="  font-family: 'Poppins', sans-serif, 'arial';
+        font-weight: 600;
+        font-size: 72px;
+        color: white;
+        text-align: center;">contact us</h1>
+    </div>
+    <div class="row">
+      <h4 style="font-family: 'Roboto', sans-serif, 'arial';
+        font-weight: 400;
+        font-size: 20px;
+        color: #9b9b9b;
+        line-height: 1.5;  text-align:center">We'd love to hear from you!</h4>
+    </div>
+    <div class="row input-container">
+      <div class="col-xs-12">
+        <div class="styled-input wide" style="
+            float: left;
+    width: 293px;
+    margin: 1rem 0;
+    position: relative;
+    border-radius: 4px;
+">
+          <input type="text" required />
+          <label>Name</label>
+        </div>
+      </div>
+      <div class="col-md-6 col-sm-12">
+        <div class="styled-input" style="    float: left;
+        width: 293px;
+        margin: 1rem 0;
+        position: relative;
+        border-radius: 4px;
+    ">
+          <input type="text" required />
+          <label>Email</label>
+        </div>
+      </div>
+      <div class="col-md-6 col-sm-12">
+        <div class="styled-input" style="    float: left;
+        width: 293px;
+        margin: 1rem 0;
+        position: relative;
+        border-radius: 4px;
+      float:right;">
+          <input type="text" required />
+          <label>Phone Number</label>
+        </div>
+      </div>
+      <div class="col-xs-12">
+        <div class="styled-input wide" style="    float: left;
+        width: 293px;
+        margin: 1rem 0;
+        position: relative;
+        border-radius: 4px;
+    ">
+          <textarea required></textarea>
+          <label>Message</label>
+        </div>
+      </div>
+      <div class="col-xs-12">
+        <div class="btn-lrg submit-btn">Send Message</div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+ -->
+
+  <!-- <///hjhh> -->
+
+
+
+
+
+  <div class="container mt-3" style="margin-top: 4cm;">
+    <h3>Contact Us</h3>
+    <form method="post" action="/contact">
+      {% csrf_token %}
+      <div class="form-group mt-3 ">
+        <label for="exampleInputEmail1"> Name</label>
+        <input type="name" class="form-control" id="name" name='name' aria-describedby="name" placeholder="eg.Mike">
+      </div>
+      <div class="form-group ">
+        <label for="exampleInputEmail1">Email address</label>
+        <input type="email" class="form-control" id="email" name='email' aria-describedby="emailHelp"
+          placeholder="eg.name@example.com">
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Phone Number</label>
+        <input type="phone" class="form-control" id="phone" name='phone' placeholder="eg.9405003374">
+      </div>
+      <div class="form-group">
+        <label for="decr">How may we help you</label>
+        <textarea class="form-control" name="decr" id="content" type="text" cols="30" rows="4"
+          placeholder="describe your queries"></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-primary mt-4">Submit</button>
+    </form>
+    <br>
+  </div>
+
+  <!-- </section> -->
+  {% endblock %}

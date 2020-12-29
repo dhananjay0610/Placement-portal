@@ -1,0 +1,179 @@
+{% extends 'base.html' %}
+{% block css %}
+
+.form-signin {
+width: 100%;
+max-width: 330px;
+padding: 15px;
+margin: auto;
+}
+.form-signin .checkbox {
+font-weight: 400;
+}
+.form-signin .form-control {
+position: relative;
+box-sizing: border-box;
+height: auto;
+padding: 10px;
+font-size: 16px;
+}
+.form-signin .form-control:focus {
+z-index: 2;
+}
+.form-signin input[type="email"] {
+margin-bottom: -1px;
+border-bottom-right-radius: 0;
+border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+margin-bottom: 10px;
+border-top-left-radius: 0;
+border-top-right-radius: 0;
+}
+{% endblock css %}
+{% load static %}
+{% block body %}
+
+<section style=" width: 100%; height: 100%;
+   background-color: #26272b;
+    padding-top: 85px;">
+  <br> <br>
+
+
+</section>
+
+
+{% for message in messages %}
+<div class="alert alert-{{ message.tags }} mb-0 alert-dismissible fade show" role="alert">
+  <strong>Message</strong> {{message}}
+
+  <button type="button" class="close" data-bs-dismiss="alert" aria-label="Close">
+
+  </button>
+</div>
+{% endfor %}
+<main class="form-signin" style="margin-top: 1cm;">
+
+
+  {% if user.is_authenticated %}
+
+  <div class=" mr-2" style="padding: 8em;">
+    <p style="padding-left: 5dp;"><strong> Welcome {{request.user}}</strong></p>
+    <br>
+    <div class=" col-md">
+      {% csrf_token %}
+      <a class="btn btn-primary" href="/logout" role="button">logout</a>
+      <br>
+      <a style="padding-left: 5dp;" role="button" href="/studentInfo">click here to see your profile</a>
+    </div>
+    <br>
+    <br>
+  </div>
+
+  {% else %}
+  <form method="post" style="padding-left: 4em; padding-right: 4em;" action="/login">
+    {% csrf_token %}
+    <div class="text-center">
+      <img class="mb-2 " src="/static/user.png" alt="" width="100" height="100">
+    </div>
+    <h1 class="h3 mb-3 fw-normal text-center">Please log in</h1>
+    <label for="loginusername">Username</label>
+    <input type="text" class="form-control" id="loginusername" name="loginusername" placeholder="enter your username"
+      required>
+    <label for="loginpass">Password</label>
+    <input type="password" class="form-control" id="loginpass" name="loginpass" placeholder="enter your password"
+      required>
+
+    <div class="row">
+      <button type="submit" class="btn btn-primary mb-3" style="margin-top: 2em;">Signin</button>
+
+  </form>
+  <button class="btn btn-primary" href="#" data-bs-toggle="modal" data-bs-target="#signupmodal">Signup</button>
+
+  </div>
+
+  {% endif %}
+
+
+</main>
+
+<!--signup modal -->
+<div class="modal fade" id="signupmodal" tabindex="-1" role="dialog" aria-labelledby="signupmodal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title " id="signupmodaltitle">Signup here</h5>
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form action="/signup" method="post">
+          {% csrf_token %}
+          <div class="row">
+            <div class="col-md-6">
+              <label for="roll">Roll Id</label>
+              <input type="text" class="form-control" id="roll" name="roll" placeholder="college onRoll" required>
+            </div>
+            <div class="col-md-6">
+              <label for="username">Username</label>
+              <input type="text" class="form-control" id="username" name="username" placeholder="choose it unique"
+                required>
+            </div>
+          </div>
+          <div class="row my-2">
+            <div class=" col-md-6">
+              <label for="fname">First Name</label>
+              <input type="text" class="form-control" id="fname" name="fname" placeholder="First name" required>
+            </div>
+            <div class=" col-md-6">
+              <label for="lname">Last Name</label>
+              <input type="text" class="form-control" id="lname" name="lname" placeholder="Last name" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com" required>
+          </div>
+          <div class="form-group">
+            <label for="address">Address</label>
+            <input type="text" class="form-control" id="address" name="address" placeholder="write with zip code"
+              required>
+          </div>
+          <div class="form-group">
+            <label for="branch">Branch </label>
+            <input type="text" class="form-control" id="branch" name="branch" placeholder="write short form in bracket"
+              required>
+          </div>
+          <div class="row mt-2">
+            <div class="form-group col-md-6">
+              <label for="pass1">Password</label>
+              <input type="password" class="form-control" id="pass1" name="pass1" placeholder="choose your password"
+                required>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="pass2">Confirm password</label>
+              <input type="password" class="form-control" id="pass2" name="pass2" placeholder="confirm your password"
+                required>
+            </div>
+          </div>
+          <button style="float:right" type="submit" class="btn btn-primary mt-2">Submit</button>
+        </form>
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% endblock body %}
+
+{% block js %}
+
+{% comment %} function myFunction() {
+location.href='/studentInfo';
+} {% endcomment %}
+{% comment %} setTimeout("myFunction()", 1000); {% endcomment %}
+
+{% endblock js %}

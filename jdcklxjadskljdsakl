@@ -1,0 +1,29 @@
+[33mcommit 2a2914b041e5feb23f07971415ce9aa1381c67a9[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m
+Author: Dhananjay <dhananjay.waghade.alpha@gmail.com>
+Date:   Tue Dec 29 11:27:02 2020 +0530
+
+     Please enter the commit message for your changes. Lines starting
+
+[33mcommit 7c3c062dce332258322ed73c90269c9b0fab8ede[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Prajwal <prajwalsakure@gmail.com>
+Date:   Sun Dec 13 14:05:15 2020 +0530
+
+    Create requirements.txt
+
+[33mcommit 8cc3ba8025d2acec8f2a33736d8a4f5fef8ccb83[m
+Author: Prajwal <prajwalsakure@gmail.com>
+Date:   Sun Dec 13 14:01:21 2020 +0530
+
+    files upload
+
+[33mcommit 2c5a12643510794b2bdb4b303bcd29e4334e4878[m
+Author: Prajwal <prajwalsakure@gmail.com>
+Date:   Sun Dec 13 13:41:18 2020 +0530
+
+    Create gitattributes
+
+[33mcommit 28bc758de52c5f2e3d948901ddbdbaf4b3322cb9[m
+Author: prajwalsakure <69012656+prajwalsakure@users.noreply.github.com>
+Date:   Sun Dec 13 11:57:40 2020 +0530
+
+    Initial commit

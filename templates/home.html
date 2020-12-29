@@ -1,0 +1,187 @@
+{% extends 'base.html' %}
+
+
+{ % block head }
+
+{% load static %}
+
+{% endblock head}
+{% block title %}
+
+home
+{% endblock title %}
+{%block css %}
+
+{% load static %}
+
+
+
+{% endblock css %}
+{% block homeactive %}active
+{% endblock homeactive %}
+
+
+{% block body %}
+
+
+
+
+<section class="banner" style=" 
+position: relative;
+width: 100%;
+height: 100vh;
+background: url(/static/job.jpg);
+background-size: cover; margin-bottom: 1cm;">
+  <!-- <div style="position: relative;
+top: 40%;
+font-size:8ch;
+color: #fff;
+font-family:Peyo;
+left: 30%;">
+    PLACEMENT PORTAL
+  </div> -->
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<main role="main">
+
+  <!-- Wrap the rest of the page in another container to center all the content. -->
+
+  <div class="container marketing">
+
+
+    <!-- START THE FEATURETTES -->
+
+    <hr class="featurette-divider">
+    <div class="container">
+      {% for post in organisation reversed %}
+
+      <div class="row featurette" style="back">
+        <div class="col-md-7">
+          <h2 class="featurette-heading">{{post.orgName}}</h2>
+          <p class="lead"> {{post.content|safe|truncatewords:70}} <a href="/{{post.slug}}"> read more</a></p>
+        </div>
+        <div class="col-md-5">
+          <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto"
+            alt="">
+        </div>
+
+      </div>
+
+      <hr class="featurette-divider">
+      {% endfor %}
+    </div>
+</main>
+
+
+
+
+<div>
+  <h1 style="margin-left: 40%; margin-right: 40%;">Our Team</h1>
+  <div class="row" style="margin-left: 5%; margin-right: 5%;">
+    <div class="column" style="float: left;
+  width: 33.3%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+  ">
+      <div class="card" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    ">
+        <img src="/static/job.jpg" alt="Jane" style="width:100%">
+        <div class="container" style="padding: 0 16px;
+      ">
+          <h2>Dhananjay Waghade</h2>
+          <p class="title" style="
+        color: grey;">Founder &amp; Developer</p>
+          <p>ID : 18005015</p>
+          <p>Branch : C.S.E</p>
+          <p><button class="button" style="  border: none;
+          outline: 0;
+          display: inline-block;
+          padding: 8px;
+          color: white;
+          background-color: #000;
+          text-align: center;
+          cursor: pointer;
+          width: 100%;
+        ">Contact</button></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="column" style="float: left;
+  width: 33.3%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+  ">
+      <div class="card" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    ">
+        <img src="/static/job.jpg" alt="Mike" style="width:100%">
+        <div class="container" style="padding: 0 16px;
+      ">
+          <h2>Prajwal Sakure</h2>
+          <p class="title" style="
+        color: grey;">Back-End Developer</p>
+          <p>ID : 18005010</p>
+          <p>Branch : C.S.E</p>
+          <p><button class="button" style="  border: none;
+          outline: 0;
+          display: inline-block;
+          padding: 8px;
+          color: white;
+          background-color: #000;
+          text-align: center;
+          cursor: pointer;
+          width: 100%;
+        ">Contact</button></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="column" style="float: left;
+  width: 33.3%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+  ">
+      <div class="card" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    ">
+        <img src="/static/job.jpg" alt="John" style="width:100%">
+        <div class="container" style="padding: 0 16px;
+      ">
+          <h2>Mayur Bhakre</h2>
+          <p class="title" style="
+        color: grey;">UX/UI Designer</p>
+          <p>ID : 18005002</p>
+          <p>Branch : C.S.E</p>
+          <p><button class="button" style="  border: none;
+          outline: 0;
+          display: inline-block;
+          padding: 8px;
+          color: white;
+          background-color: #000;
+          text-align: center;
+          cursor: pointer;
+          width: 100%;
+        ">Contact</button></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock body %}
